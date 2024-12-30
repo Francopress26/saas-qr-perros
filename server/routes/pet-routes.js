@@ -29,17 +29,14 @@ router.get('/pet/:userid', async (req, res) => {
 
     console.log(pets);
 
-    // Si no hay mascotas, envía una respuesta con un array vacío
     if (!pets || pets.length === 0) {
       return res.json({ ok: true, pets: [] });
     }
 
-    // Respuesta exitosa con las mascotas
     return res.json({ ok: true, pets: pets });
   } catch (error) {
     console.log(error);
 
-    // En caso de error, envía una respuesta de error
     return res.status(500).json({ ok: false, message: "Error en el servidor" });
   }
 });
@@ -57,15 +54,12 @@ router.get('/pet/id/:petid', async (req, res) => {
 
     console.log(pet);
 
-    // Si no hay mascotas, envía una respuesta con un array vacío
     if (!pet) { return { ok: false, message: "Mascota no encontrada" } }
 
-    // Respuesta exitosa con las mascotas
     return res.json({ ok: true, pet: pet });
   } catch (error) {
     console.log(error);
 
-    // En caso de error, envía una respuesta de error
     return res.status(500).json({ ok: false, message: "Error en el servidor" });
   }
 });

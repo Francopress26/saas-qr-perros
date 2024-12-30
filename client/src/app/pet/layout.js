@@ -14,7 +14,6 @@ export default function PetLayout({ children}) {// will be a page or nested layo
       <>
        <ProfileNavBar></ProfileNavBar>
       <section>
-        {/* Include shared UI here e.g. a header or sidebar */}
 
         {children}
       </section>

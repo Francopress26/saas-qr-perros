@@ -4,11 +4,11 @@ export const createUser = async ({ name, email, password }) => {
     console.log(name,email,password)
     try {
         const response = await fetch('http://localhost:3001/api/user', {
-            method: 'POST', // Especifica el método HTTP
+            method: 'POST', 
             headers: {
-                'Content-Type': 'application/json', // Especifica que el cuerpo de la solicitud está en formato JSON
+                'Content-Type': 'application/json', 
             },
-            body: JSON.stringify({ name, email, password }), // Convierte los datos a una cadena JSON
+            body: JSON.stringify({ name, email, password }), 
         });
        const data = await response.json()
        return data;
@@ -24,11 +24,11 @@ export const validateUser = async ({email,password})=>{
 
     try {
         const response = await fetch('http://localhost:3001/api/user/auth', {
-            method: 'POST', // Especifica el método HTTP
+            method: 'POST', 
             headers: {
-                'Content-Type': 'application/json',   // Especifica que el cuerpo de la solicitud está en formato JSON
+                'Content-Type': 'application/json',   
             },
-            body: JSON.stringify({ email, password }), // Convierte los datos a una cadena JSON
+            body: JSON.stringify({ email, password }), 
         });
        const data = await response.json()
        return data;
@@ -42,13 +42,13 @@ export const validateUser = async ({email,password})=>{
 export const getUser = async (email) => {
     try {
         const response = await fetch('http://localhost:3001/api/user/' + email, {
-            method: 'GET', // Especifica el método HTTP
+            method: 'GET', 
             headers: {
-                'Content-Type': 'application/json', // Especifica que el cuerpo de la solicitud está en formato JSON
+                'Content-Type': 'application/json', 
             },
         });
 
-        if (!response.ok) { // Verifica si la respuesta no es exitosa
+        if (!response.ok) { 
             throw new Error('Error al buscar el usuario: ' + response.statusText);
         }
 
@@ -57,7 +57,7 @@ export const getUser = async (email) => {
 
     } catch (error) {
         console.error('Error al buscar el usuario:', error);
-        return { ok: false, message: error.message }; // Retorna un objeto con un mensaje de error
+        return { ok: false, message: error.message }; 
     }
 }
 
@@ -65,16 +65,16 @@ export const verificateEmail =  async (token)=>{
 
     try {
         const response = await fetch(`http://localhost:3001/api/user/verificate-email?token=${token}`, {
-            method: 'POST', // Especifica el método HTTP
+            method: 'POST', 
             headers: {
-                'Content-Type': 'application/json', // Especifica que el cuerpo de la solicitud está en formato JSON
+                'Content-Type': 'application/json', 
             }
         });
        const data = await response.json()
        return data;
     } catch (error) {
         console.error('Error al autenticar el usuario:', error);
-        return {ok:false,message:"Error al hacer la petición"}; // Lanza el error para manejarlo en otra parte del código si es necesario
+        return {ok:false,message:"Error al hacer la petición"}; 
     }
 }
 

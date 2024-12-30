@@ -4,9 +4,9 @@ export const getPets = async (userId) => {
 
   try {
     const response = await fetch(`http://localhost:3001/api/pet/${userId}`, {
-        method: 'GET', // Método GET para obtener datos
+        method: 'GET', 
         headers: {
-            'Content-Type': 'application/json', // Aunque no es necesario para GET, es seguro mantenerlo
+            'Content-Type': 'application/json', 
         },
     });
 
@@ -34,7 +34,7 @@ export const createPet = async ( data ) => {
       return {ok:true,newPet:result.newPet}
     } catch (error) {
       console.error('Error:', error);
-      throw error; // Lanza el error para manejarlo en otra parte del código
+      throw error; 
     }
   };
 
@@ -43,9 +43,9 @@ export const createPet = async ( data ) => {
 
     try {
       const response = await fetch(`http://localhost:3001/api/pet/id/${petId}`, {
-        method: 'GET', // Método GET para obtener datos
+        method: 'GET', 
         headers: {
-            'Content-Type': 'application/json', // Aunque no es necesario para GET, es seguro mantenerlo
+            'Content-Type': 'application/json',  
         },
     });
 
@@ -74,7 +74,7 @@ export const createPet = async ( data ) => {
       return {ok:true,updatedPet:result.updatedPet}
     } catch (error) {
       console.error('Error:', error);
-      throw error; // Lanza el error para manejarlo en otra parte del código
+      throw error; 
     }
   };
 

@@ -103,7 +103,7 @@ router.post('/user', async (req, res) => {
             ok: true,
             message: "Usuario creado exitosamente.",
             sentEmail:sendEmail.ok,
-            user: userSubset // o un subset de los datos del usuario
+            user: userSubset 
         });
     } catch (error) {
         console.log(error)

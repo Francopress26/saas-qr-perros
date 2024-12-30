@@ -12,7 +12,6 @@ import Faq from "@/components/faq/Faq";
 import ContactForm from "@/components/forms/ContactForm";
 
 export default function Home() {
-  console.log("ola")
   return (
     <>
       <NavBar />
