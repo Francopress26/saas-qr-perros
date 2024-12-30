@@ -1,0 +1,26 @@
+# Ignorar node_modules de ambos directorios
+client/node_modules/
+server/node_modules/
+
+# Ignorar archivos de configuración específicos para el servidor
+server/.env
+server/.env.local
+server/.env.production
+
+# Ignorar archivos de build del servidor (si aplica)
+server/dist/
+server/build/
+
+# Ignorar logs de la API o el servidor
+server/*.log
+
+# Ignorar configuración local de IDEs y editores (puedes añadir más si usas otro editor)
+.vscode/
+.idea/
+
+# Ignorar archivos de sistemas operativos
+.DS_Store
+
+# Archivos temporales
+*.bak
+*.swp
